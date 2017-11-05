@@ -2,6 +2,64 @@
 xmlns:dc="http://purl.org/dc/elements/1.1/"
 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
-  <dc:title>{{ dc_title }}</dc:title>
-  <dc:title>{{ dc_description }}</dc:title>
+  {% if dc_title %}
+    <dc:title>{{ dc_title }}</dc:title>
+  {% endif %}
+
+  {% if dc_identifier %}
+    <dc:identifer>{{ dc_identifier }}</dc:identifier>
+  {% endif %}
+
+  {% if dc_creator %}
+    <dc:creator>{{ dc_creator }}</dc:creator>
+  {% endif %}
+
+  {% if dc_contributor %}
+    <dc:contributor>{{ dc_contributor }}</dc:contributor>
+  {% endif %}
+
+  {% if dc_subject%}
+    <dc:subject>{{ dc_subject}}</dc:subject>
+  {% endif %}
+
+  {% if dc_source %}
+    <dc:source>{{ dc_source }}</dc:source>
+  {% endif %}
+
+  {% if dc_publisher %}
+    <dc:publisher>{{ dc_publisher }}</dc:publisher>
+  {% endif %}
+
+  {% if dc_coverage %}
+    <dc:coverage>{{ dc_coverage }}</dc:coverage>
+  {% endif %}
+
+  {% if dc_format %}
+    <dc:format>{{ dc_format }}</dc:format>
+  {% endif %}
+
+  {% if dc_relation %}
+    <dc:relation>{{ dc_relation }}</dc:relation>
+  {% endif %}
+
+  {% if dc_rights %}
+    <dc:rights>{{ dc_rights }}</dc:rights>
+  {% endif %}
+
+  {% if dc_type %}
+    <dc:type>{{ dc_type }}</dc:type>
+  {% endif %}
+
+  {% if dc_date %}
+    <dc:date>{{ dc_date }}</dc:date>
+  {% endif %}
+
+  {% if dc_language %}
+    <dc:language>{{ dc_language }}</dc:language>
+  {% endif %}
+
+  {% if dc_description %}
+    <dc:title>{{ dc_description }}</dc:title>
+  {% endif %}
+
 </oai_dc:dc>
