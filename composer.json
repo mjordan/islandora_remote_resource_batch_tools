@@ -1,0 +1,8 @@
+{
+    "require": {
+        "php": ">=5.5.0",
+        "league/csv":"~7.1",
+        "nategood/commando": "*",
+        "twig/twig": "~1.0"
+    }
+}
