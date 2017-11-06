@@ -1,9 +1,9 @@
 # Islandora Remote Resource Tools
 
-Tools for the Islandora Remote Resource Batch module.
+Tools for the Islandora Remote Resource Batch module. See the README.md file in each of the tool's subdirectories for more information:
 
-CSV tool
-MIK script
+* [CSV conversion tool](csv)
+* [MIK post-write script](mik)
 
 ## Maintainer
 
