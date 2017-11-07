@@ -25,7 +25,7 @@ $cmd->option('output_dir')
     ->describedAs('Path to the output directory.');
 $cmd->option('metadata_prefix')
     ->default('dc_')
-    ->describedAs('Optional. Path to the output directory. Defaults to "dc_".');
+    ->describedAs('Optional. Prefix used in the CSV column heading for metadata values. Also used in the metadata XML filenames. Defaults to "dc_".');
 
 $input_csv = Reader::createFromPath($cmd['csv']);
 $records = $input_csv->fetchAssoc();
@@ -49,6 +49,7 @@ foreach ($records as $record) {
         if ($key == 'ID' || $key == 'OBJ') {
             continue;
         }
+        // Other datastreams, e.g. TN.
         if (!preg_match($metadata_prefix_pattern, $key)) {
             $src_path = dirname($cmd['csv']) . DIRECTORY_SEPARATOR . $value;
             $dest_ext = pathinfo($value, PATHINFO_EXTENSION);
@@ -65,7 +66,8 @@ foreach ($records as $record) {
     $twig_loader = new \Twig_Loader_Filesystem(dirname($cmd['template']));
     $twig = new \Twig_Environment($twig_loader);
     $xml_from_template = $twig->render(basename($cmd['template']), $record);
-    $output_file = $cmd['output_dir'] . DIRECTORY_SEPARATOR . $record['ID'] . '.DC.xml';
+    $dsid = strtoupper(rtrim($cmd['metadata_prefix'], '_'));
+    $output_file = $cmd['output_dir'] . DIRECTORY_SEPARATOR . $record['ID'] . '.' . $dsid . '.xml';
     file_put_contents($output_file, $xml_from_template);
 }
 
