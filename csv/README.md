@@ -4,17 +4,17 @@ Utility script to convert a CSV file into files suitable for using as input to t
 
 ## System requirements and installation
 
-To install and run this proof of concept indexer, you will need:
+To install and run this tool, you will need:
 
 * PHP 5.5.0 or higher command-line interface
 * [Composer](https://getcomposer.org)
 
 To install the tool:
 
-* Clone the Git repo
-* `cd islandora_remote_resource_batch_csv_tool`
-* `cd csv`
-* `php composer.phar install` (or equivalent on your system, e.g., `./composer install`)
+1. Clone the Git repo
+1. `cd islandora_remote_resource_batch_csv_tool`
+1. `cd csv`
+1. `php composer.phar install` (or equivalent on your system, e.g., `./composer install`)
 
 ## Running the tool
 
@@ -52,6 +52,14 @@ Running `php convert_csv.php --csv sample_data/sample.csv --output_dir /tmp/outp
 This output can then be loaded into Islandora using the Islandora Remote Resource Batch module.
 
 ## The CSV file
+
+This tool comes with a sample CSV file, and accompanying sample thumbnails:
+
+```
+ID,OBJ,dc_title,dc_description,TN
+1,http://digital.lib.sfu.ca/vanpunk-267/doa-vktms,"D.O.A. VKTMS","Poster for show at Old Waldorf 444 Battery Street, San Francisco, CA, USA.",1.jpg
+2,http://digital.lib.sfu.ca/vanpunk-276/1981-hard-core-tour,"1981 Hard Core Tour","Poster for show at Marble Bar 306 W. Franklin St, Baltimore, MD, USA.",2.jpg
+```
 
 ### Required columns
 
