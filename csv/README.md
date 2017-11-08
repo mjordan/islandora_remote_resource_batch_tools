@@ -1,6 +1,6 @@
 # Islandora Remote Resource CSV Conversion Tool
 
-Utility script to convert a CSV file into files suitable for using as input to the Islandora Remote Resource Batch module.
+Utility script to convert CSV data into files suitable for using as input to the [Islandora Remote Resource Batch](https://github.com/mjordan/islandora_solution_pack_remote_resource/tree/7.x/modules/islandora_remote_resource_batch) module.
 
 ## System requirements and installation
 
@@ -37,7 +37,7 @@ Running `php convert_csv.php --help` will produce the following output:
      Optional. Prefix used in CSV headers for columns containing metadata values. Also used in metadata filenames. Defaults to "dc_".
 ```
 
-Running `php convert_csv.php --csv sample_data/sample.csv --output_dir /tmp/output will produce the following output in /tmp/output:
+Running `php convert_csv.php --csv sample_data/sample.csv --output_dir /tmp/output` will produce the following output in /tmp/output:
 
 ```
 /tmp/output/
