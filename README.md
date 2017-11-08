@@ -1,6 +1,6 @@
 # Islandora Remote Resource Tools
 
-Tools for the Islandora Remote Resource Batch module. See the README.md file in each of the tool's subdirectories for more information:
+Tools for the [Islandora Remote Resource Batch](https://github.com/mjordan/islandora_solution_pack_remote_resource/tree/7.x/modules/islandora_remote_resource_batch) module. See the README.md file in each of the following tool's subdirectories for more information:
 
 * [CSV conversion tool](csv)
 * [MIK post-write script](mik)
@@ -11,7 +11,7 @@ Tools for the Islandora Remote Resource Batch module. See the README.md file in 
 
 ## Development and feedback
 
-See the README in [Islandora Remote Resource Solution Pack](https://github.com/mjordan/islandora_solution_pack_remote_resource).
+Bug reports, use cases and suggestions are welcome, as are pull requests. See CONTRIBUTING.md for more information in [https://github.com/mjordan/islandora_solution_pack_remote_resource](Islandora Remote Resource Solution Pack) for more information.
 
 ## License
 

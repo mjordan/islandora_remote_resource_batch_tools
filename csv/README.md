@@ -105,7 +105,7 @@ Variables in the template should correspond with columns in the CSV file and sho
 
 ## Development and feedback
 
-See the README in [Islandora Remote Resource Solution Pack](https://github.com/mjordan/islandora_solution_pack_remote_resource).
+See the CONTRIBUTING.md in [Islandora Remote Resource Solution Pack](https://github.com/mjordan/islandora_solution_pack_remote_resource).
 
 ## License
 

@@ -8,7 +8,7 @@ The script included in this directory enables the Move to Islandora Kit (MIK) to
 
 Also in this directory is a sample MIK configuration file that can be used in conjuction with the script to harvest objects from another Islandora instance. Running MIK using the configuration file and the post-write hook script will prepare harvested content that is ready to batch ingest.
 
-The Move to Islandora Kit toolchain that this configuration file and script work with is "[OAI PMH for Islandora repositories](https://github.com/MarcusBarnes/mik/wiki/Toolchain:-OAI-PMH-for-Islandora-repositories)". This toolchain harvests content from an Islandora instance for loading into another. Originally created as a training and testing toolchain, it is completely suitable for harvesting data for discovery purposes as endabled by the Islandora Remote Resource Solution Pack.
+The Move to Islandora Kit toolchain that this configuration file and script work with is "[OAI PMH for Islandora repositories](https://github.com/MarcusBarnes/mik/wiki/Toolchain:-OAI-PMH-for-Islandora-repositories)". This toolchain harvests content from an Islandora instance for loading into another.
 
 ## Usage
 
@@ -18,7 +18,17 @@ The Move to Islandora Kit toolchain that this configuration file and script work
 1. Adjust the settings (OAI-PMH configuration, file paths, etc.) in the .ini file as necessary.
 1. Run MIK: `./mik -c remote_resource_oai.ini`. During testing, it is a good idea to limit the number of objects harvested by including the `-l` (limit) option, e.g., `./mik -c remote_resource_oai.ini -l 5`.
 
-The resulting output will ready to ingest using the Islandora Remote Resource Batch module.
+If your MIK output directory is `/tmp/output`, it will contain files similar to this, ready to ingest using the Islandora Remote Resource Batch module:
+
+```
+/tmp/output/
+├── 1.DC.xml
+├── 1.TN.jpg
+├── 1.txt
+├── 2.DC.xml
+├── 2.TN.jpg
+└── 2.txt
+```
 
 ## Maintainer
 
@@ -26,7 +36,7 @@ The resulting output will ready to ingest using the Islandora Remote Resource Ba
 
 ## Development and feedback
 
-See the README in [Islandora Remote Resource Solution Pack](https://github.com/mjordan/islandora_solution_pack_remote_resource).
+See the CONTRIBUTING.md in [Islandora Remote Resource Solution Pack](https://github.com/mjordan/islandora_solution_pack_remote_resource).
 
 ## License
 
