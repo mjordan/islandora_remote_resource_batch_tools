@@ -1,0 +1,8 @@
+{
+    "require": {
+        "php": ">=5.5.0",
+        "technosophos/LibRIS": ">=1.0.0",
+        "nategood/commando": "*",
+        "twig/twig": "~1.0"
+    }
+}
