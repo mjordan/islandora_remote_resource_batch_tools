@@ -9,6 +9,7 @@
  */
 
 use \LibRIS\RISReader;
+use \LibRIS\RISTags;
 
 require_once __DIR__ . '/vendor/autoload.php';
 
@@ -30,6 +31,9 @@ $cmd->option('metadata_prefix')
 $input_ris = new RISReader();
 $records = $input_ris->parseFile($cmd['ris']);
 
+$reference_types = new RISTags();
+$reference_type_names = $reference_types::$typeMap;
+
 $records = $input_ris->getRecords();
 
 if (!file_exists($cmd['output_dir'])) {
@@ -39,35 +43,28 @@ if (!file_exists($cmd['output_dir'])) {
 $record_num = 0;
 foreach ($records as $record) {
     $record_num++;
-    // print "Generating files for CSV record " . $record['ID'] . "\n";
 
-/*
-    foreach ($record as $key => $value) {
-        // First, create the .txt file that contains the URL to the remote resource.
-        if ($key == 'OBJ') {
-            $dest_path = $cmd['output_dir'] . DIRECTORY_SEPARATOR . $record['ID'] . '.txt';
-            file_put_contents($dest_path, $record['OBJ']);
-        }
+    print "Generating files for RIS record " . $record_num . "\n";
+    if (array_key_exists('UR', $record)) {
+        $dest_path = $cmd['output_dir'] . DIRECTORY_SEPARATOR . $record_num . '.txt';
+        file_put_contents($dest_path, $record['UR']);
+    }
+    else {
+        print "Record $record_num has no URL, skipping\n";
+        continue;
+    }
 
-        // Copy files to the output directory.
-        $metadata_prefix_pattern = '/^' . $cmd['metadata_prefix'] . '/';
-        if ($key == 'ID' || $key == 'OBJ') {
-            continue;
-        }
-        // Other datastreams, e.g. TN.
-        if (!preg_match($metadata_prefix_pattern, $key)) {
-            $src_path = dirname($cmd['ris']) . DIRECTORY_SEPARATOR . $value;
-            $dest_ext = pathinfo($value, PATHINFO_EXTENSION);
-            $dest_path = $cmd['output_dir'] . DIRECTORY_SEPARATOR . $record['ID'] . '.' . $key . '.' . $dest_ext;
-            if (file_exists($src_path)) {
-                copy($src_path, $dest_path);
-            }
-            else {
-                print "Source file $value does not exist\n";
-            }
+    // Convert abbreviated types to full type names.
+    foreach ($record['TY'] as &$type) {
+        $type = $reference_type_names[$type];
+    }
+
+    // Convert yyyy/mm/dd dates to yyyy-mm-dd dates.
+    if (array_key_exists('DA', $record)) {
+        foreach ($record['DA'] as &$date) {
+            $date = preg_replace('#/#', '-', $date);
         }
     }
-*/
 
     $twig_loader = new \Twig_Loader_Filesystem(dirname($cmd['template']));
     $twig = new \Twig_Environment($twig_loader);
