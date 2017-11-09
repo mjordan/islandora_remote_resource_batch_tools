@@ -12,7 +12,7 @@ To install and run this tool, you will need:
 To install the tool:
 
 1. Clone the Git repo
-1. `cd islandora_remote_resource_batch_csv_tool`
+1. `cd islandora_remote_resource_batch_tools`
 1. `cd csv`
 1. `php composer.phar install` (or equivalent on your system, e.g., `./composer install`)
 
