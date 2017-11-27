@@ -3,6 +3,7 @@
 Tools for the [Islandora Remote Resource Batch](https://github.com/mjordan/islandora_solution_pack_remote_resource/tree/7.x/modules/islandora_remote_resource_batch) module. See the README.md file in each of the following tool's subdirectories for more information:
 
 * [CSV conversion tool](csv)
+* [RIS conversion tool](ris)
 * [MIK post-write script](mik)
 
 ## Maintainer

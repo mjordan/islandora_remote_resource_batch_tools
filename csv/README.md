@@ -92,7 +92,7 @@ xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.opena
     <dc:identifer>{{ dc_identifier }}</dc:identifier>
   {% endif %}
 
-  <!- Other elements omitted from this example. -->
+  <!-- Other elements omitted from this example. -->
 
 </oai_dc:dc>
 ``` 

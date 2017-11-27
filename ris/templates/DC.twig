@@ -1,0 +1,53 @@
+<oai_dc:dc xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+xmlns:dc="http://purl.org/dc/elements/1.1/"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+  {% if TI %}
+    {% for title in TI %}
+      <dc:title>{{ title }}</dc:title>
+    {% endfor %}
+  {% endif %}
+
+  {% if TY %}
+    {% for type in TY %}
+      <dc:type>{{ type }}</dc:type>
+    {% endfor %}
+  {% endif %}
+
+  {% if AB %}
+    {% for abstract in AB %}
+      <dc:description>{{ abstract }}</dc:description>
+    {% endfor %}
+  {% endif %}
+
+  {% if DA %}
+    {% for date in DA %}
+      <dc:date>{{ date }}</dc:date>
+    {% endfor %}
+  {% endif %}
+
+  {% if PB %}
+    {% for publisher in PB %}
+      <dc:publisher>{{ publisher }}</dc:publisher>
+    {% endfor %}
+  {% endif %}
+
+  {% if LA %}
+    {% for language in LA %}
+      <dc:language>{{ language }}</dc:language>
+    {% endfor %}
+  {% endif %}
+
+  {% if SN %}
+    {% for standard_number in SN %}
+      <dc:identifier>{{ standard_number }}</dc:identifier>
+    {% endfor %}
+  {% endif %}
+
+  {% if DO  %}
+    {% for doi in DO %}
+      <dc:identifier>{{ doi }}</dc:identifier>
+    {% endfor %}
+  {% endif %}
+
+</oai_dc:dc>
