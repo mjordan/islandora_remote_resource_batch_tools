@@ -53,6 +53,8 @@ Note that since RIS is a citation tagging format and does not know about content
 
 ## The RIS file
 
+In order to create objects compatible with the Islandora Remote Resource Solution Packs, this script takes the following actions:
+
 * If there is no 'UR' (URL) tag, the record is skipped.
 * Content in the 'TY' tag (reference type) is translated from its abbriviation to its full form (e.g., 'CHAP' becomes 'Book Chapter').
 * Dates in the 'DA' tag in yyyy/mm/dd format are converted to yyyy-mm-dd format.
