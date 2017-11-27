@@ -18,7 +18,7 @@ To install the tool:
 
 ## Running the tool
 
-Running `php convert_csv.php --help` will produce the following output:
+Running `php convert_ris.php --help` will produce the following output:
 
 ```
 --help
@@ -54,7 +54,7 @@ Note that since RIS is a citation tagging format and does not know about content
 ## The RIS file
 
 * If there is no 'UR' (URL) tag, the record is skipped.
-* 'TY' tag (reference type) is translated from its abbriviation to its full form (e.g., 'CHAP' becomes 'Book Chapter').
+* Content in the 'TY' tag (reference type) is translated from its abbriviation to its full form (e.g., 'CHAP' becomes 'Book Chapter').
 * Dates in the 'DA' tag in yyyy/mm/dd format are converted to yyyy-mm-dd format.
 
 ## The metadata template
